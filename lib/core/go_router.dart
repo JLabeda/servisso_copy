@@ -6,5 +6,9 @@ final _goRouter = GoRouter(
       path: '/',
       builder: (context, state) => const WelcomingScreen(),
     ),
+    GoRoute(
+      path: '/login',
+      builder: (context, state) => const LoginScreen(),
+    ),
   ],
 );

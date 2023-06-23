@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class WelcomingScreen extends StatefulWidget {
-  const WelcomingScreen({
-    super.key,
-  });
+class WelcomingScreen extends StatelessWidget {
+  const WelcomingScreen({super.key});
 
-  @override
-  State<WelcomingScreen> createState() => _WelcomingScreenState();
-}
-
-class _WelcomingScreenState extends State<WelcomingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +25,7 @@ class _WelcomingScreenState extends State<WelcomingScreen> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => context.go('/login'),
                   child: const Text('I am a car owner'),
                 ),
               ),

@@ -1,29 +1,63 @@
 part of 'main.dart';
 
 ThemeData _getTheme(BuildContext context) => ThemeData(
+      // TEXT STYLE
       textTheme: TextTheme(
         titleLarge: Theme.of(context).textTheme.bodyMedium!.copyWith(
               fontSize: 32,
               fontFamily: 'Inter',
+              color: const Color(0xFF00798C),
+            ),
+        titleMedium: Theme.of(context).textTheme.bodyMedium!.copyWith(
+              fontSize: 24,
+              fontFamily: 'Inter',
+              color: const Color(0xFF00798C),
             ),
         labelMedium: Theme.of(context).textTheme.bodyMedium!.copyWith(
               fontSize: 32,
               fontFamily: 'Inter',
+              color: Colors.black,
             ),
         // Body textTheme:
         bodyLarge: Theme.of(context).textTheme.bodyMedium!.copyWith(
               fontSize: 16,
               fontFamily: 'Inter',
+              color: const Color(0xFF00798C),
             ),
         bodyMedium: Theme.of(context).textTheme.bodyMedium!.copyWith(
               fontSize: 12,
               fontFamily: 'Inter',
+              color: const Color(0xFF00798C),
             ),
         bodySmall: Theme.of(context).textTheme.bodyMedium!.copyWith(
               fontSize: 8,
               fontFamily: 'Inter',
+              color: const Color(0xFF00798C),
             ),
       ),
+      // TEXT FORM STYLE
+      inputDecorationTheme: const InputDecorationTheme(
+        contentPadding: EdgeInsets.symmetric(
+          vertical: 8,
+          horizontal: 16,
+        ),
+        filled: true,
+        fillColor: Color(0xFFFFFFFF),
+        border: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.all(
+            Radius.circular(5),
+          ),
+        ),
+        hintStyle: TextStyle(
+          color: Color(0xFF00798C),
+        ),
+        labelStyle: TextStyle(
+          color: Color(0xFF00798C),
+        ),
+      ),
+
+      // BUTTON STYLE
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           alignment: Alignment.center,
@@ -41,10 +75,8 @@ ThemeData _getTheme(BuildContext context) => ThemeData(
           elevation: MaterialStateProperty.all(12),
         ),
       ),
-      buttonTheme: ButtonThemeData(
-          shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-      )),
+
+      // COLORS
       colorScheme: const ColorScheme(
         brightness: Brightness.light,
         primary: Color(0xFF00798C),
