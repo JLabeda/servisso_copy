@@ -14,5 +14,9 @@ final _goRouter = GoRouter(
       path: '/to-web',
       builder: (context, state) => const ToWebScreen(),
     ),
+    GoRoute(
+      path: '/create_account',
+      builder: (context, state) => const CreateAccountScreen(),
+    ),
   ],
 );

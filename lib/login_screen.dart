@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servisso/core/widgets/servisso_app_bar.dart';
@@ -22,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: const ServissoAppBar(),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24, 64, 24, 32),
+        padding: const EdgeInsets.fromLTRB(24, 64, 24, 48),
         child: Form(
           key: _formKey,
           child: Column(
@@ -48,20 +49,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () {},
               ),
               const Spacer(),
-              Text(
-                'Don\'t have an account yet? No problem, you can click the button below in order to',
+              RichText(
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.labelMedium,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'create an account',
-                  style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text:
+                          'Don\'t have an account yet? No problem, you can click the highlighted text in order to',
+                      style: Theme.of(context).textTheme.labelMedium,
+                    ),
+                    TextSpan(
+                        text: ' create an account',
+                        style:
+                            Theme.of(context).textTheme.labelMedium!.copyWith(
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () => context.push('/create-account')),
+                  ],
                 ),
-              )
+              ),
             ],
           ),
         ),

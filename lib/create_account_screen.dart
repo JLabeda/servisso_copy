@@ -1,0 +1,11 @@
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+
+class CreateAccountScreen extends StatelessWidget {
+  const CreateAccountScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
