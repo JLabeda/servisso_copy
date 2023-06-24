@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:servisso/core/widgets/servisso_app_bar.dart';
+import 'package:servisso/core/widgets/servisso_elevated_button.dart';
+import 'package:servisso/core/widgets/servisso_text_form_field.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -16,27 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        shadowColor: Colors.transparent,
-        backgroundColor: Colors.transparent,
-        flexibleSpace: null,
-        leading: GestureDetector(
-          onTap: () => context.go('/'),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
-              borderRadius: const BorderRadius.horizontal(
-                right: Radius.circular(24),
-              ),
-            ),
-            width: 16,
-            child: const Icon(
-              Icons.arrow_back_sharp,
-              size: 32,
-            ),
-          ),
-        ),
-      ),
+      appBar: const ServissoAppBar(),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
         padding: const EdgeInsets.fromLTRB(24, 64, 24, 32),
@@ -50,26 +33,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: Theme.of(context).textTheme.labelMedium,
               ),
               const SizedBox(height: 48),
-              Card(
-                elevation: 8,
-                child: TextFormField(
-                  controller: _emailController,
-                ),
+              ServissoTextFormField(
+                controller: _emailController,
+                labelText: 'e-mail',
               ),
-              const SizedBox(height: 8),
-              Card(
-                elevation: 8,
-                child: TextFormField(
-                  controller: _passwordController,
-                ),
+              const SizedBox(height: 36),
+              ServissoTextFormField(
+                controller: _passwordController,
+                labelText: 'password',
               ),
-              const SizedBox(height: 32),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Login'),
-                ),
+              const SizedBox(height: 48),
+              ServissoElevatedButton(
+                child: const Text('Login'),
+                onPressed: () {},
               ),
               const Spacer(),
               Text(

@@ -10,5 +10,9 @@ final _goRouter = GoRouter(
       path: '/login',
       builder: (context, state) => const LoginScreen(),
     ),
+    GoRoute(
+      path: '/to-web',
+      builder: (context, state) => const ToWebScreen(),
+    ),
   ],
 );

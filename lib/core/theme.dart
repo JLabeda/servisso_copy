@@ -36,6 +36,7 @@ ThemeData _getTheme(BuildContext context) => ThemeData(
             ),
       ),
       // TEXT FORM STYLE
+
       inputDecorationTheme: const InputDecorationTheme(
         contentPadding: EdgeInsets.symmetric(
           vertical: 8,
@@ -46,7 +47,7 @@ ThemeData _getTheme(BuildContext context) => ThemeData(
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.all(
-            Radius.circular(5),
+            Radius.circular(12),
           ),
         ),
         hintStyle: TextStyle(
