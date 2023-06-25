@@ -15,8 +15,12 @@ final _goRouter = GoRouter(
       builder: (context, state) => const ToWebScreen(),
     ),
     GoRoute(
-      path: '/create_account',
-      builder: (context, state) => const CreateAccountScreen(),
+      path: '/create-account',
+      builder: (context, state) => RegisterScreen(),
+    ),
+    GoRoute(
+      path: '/landing',
+      builder: (context, state) => LandingScreen(),
     ),
   ],
 );
