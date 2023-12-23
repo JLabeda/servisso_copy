@@ -16,7 +16,6 @@ class ServissoAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: titleWidget,
       shadowColor: Colors.transparent,
       backgroundColor: Colors.transparent,
-      flexibleSpace: null,
       leading: leadingWidget ??
           GestureDetector(
             onTap: () => context.pop(),

@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 48),
               ServissoElevatedButton(
-                child: const Text('Login'),
+                title: 'Login',
                 onPressed: () => context.go('/landing'),
               ),
               const Spacer(),

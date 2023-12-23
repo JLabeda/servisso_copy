@@ -25,12 +25,12 @@ class WelcomingScreen extends StatelessWidget {
               ),
               ServissoElevatedButton(
                 onPressed: () => context.push('/login'),
-                child: const Text('I am a car owner'),
+                title: 'I am a car owner',
               ),
               const SizedBox(height: 32),
               ServissoElevatedButton(
                 onPressed: () => context.push('/to-web'),
-                child: const Text('I am a car service owner'),
+                title: 'I am a car service owner',
               ),
             ],
           ),
