@@ -19,7 +19,7 @@ class ToWebScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Mobile app is designed to be used by car owners - Your clients. If You are a car mechanic, please visit our Servisso web portal ',
+                'This mobile app is designed to be used by car owners - Your clients. If You are a car mechanic, please visit our Servisso web portal ',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.labelMedium,
               ),
