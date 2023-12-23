@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:servisso/core/main.dart';
 import 'package:servisso/core/widgets/servisso_elevated_button.dart';
 
 class WelcomingScreen extends StatelessWidget {
@@ -24,12 +25,12 @@ class WelcomingScreen extends StatelessWidget {
                 height: 128,
               ),
               ServissoElevatedButton(
-                onPressed: () => context.push('/login'),
+                onPressed: () => context.pushNamed(ServissoRoutes.login.name),
                 title: 'I am a car owner',
               ),
               const SizedBox(height: 32),
               ServissoElevatedButton(
-                onPressed: () => context.push('/to-web'),
+                onPressed: () => context.pushNamed(ServissoRoutes.toWeb.name),
                 title: 'I am a car service owner',
               ),
             ],

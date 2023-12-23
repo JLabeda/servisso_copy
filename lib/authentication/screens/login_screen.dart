@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:servisso/core/main.dart';
 import 'package:servisso/core/widgets/servisso_app_bar.dart';
 import 'package:servisso/core/widgets/servisso_elevated_button.dart';
 import 'package:servisso/core/widgets/servisso_text_form_field.dart';
@@ -46,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 48),
               ServissoElevatedButton(
                 title: 'Login',
-                onPressed: () => context.go('/landing'),
+                onPressed: () => context.goNamed(ServissoRoutes.landing.name),
               ),
               const Spacer(),
               RichText(
@@ -65,7 +66,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   color: Theme.of(context).colorScheme.primary,
                                 ),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () => context.push('/create-account')),
+                          ..onTap = () => context
+                              .pushNamed(ServissoRoutes.createAccount.name)),
                   ],
                 ),
               ),
