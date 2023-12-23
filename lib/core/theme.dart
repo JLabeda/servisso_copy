@@ -6,6 +6,7 @@ const Color _background = Color(0xFFEFF1F3);
 ThemeData _getTheme(BuildContext context) => ThemeData(
       // TEXT STYLE
       textTheme: TextTheme(
+        // Title textTheme:
         titleLarge: Theme.of(context)
             .textTheme
             .bodyMedium!
@@ -57,7 +58,7 @@ ThemeData _getTheme(BuildContext context) => ThemeData(
         style: ButtonStyle(
           alignment: Alignment.center,
           textStyle: MaterialStateProperty.all(
-            const TextStyle(fontSize: 32),
+            const TextStyle(fontSize: 24),
           ),
           padding: MaterialStateProperty.all(
             const EdgeInsets.all(16),

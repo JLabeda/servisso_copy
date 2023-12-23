@@ -148,7 +148,7 @@ class RegisterScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               ServissoElevatedButton(
-                child: const Text('Create an account'),
+                title: 'Create an account',
                 onPressed: () {},
               ),
             ],
