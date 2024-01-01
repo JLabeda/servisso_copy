@@ -13,9 +13,6 @@ class RegisterScreen extends StatelessWidget {
   final _lastNameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _serviceCodeController = TextEditingController();
-  final _carBrandController = TextEditingController();
-  final _carModelController = TextEditingController();
   final _scrollController = ScrollController();
 
   @override
@@ -110,38 +107,6 @@ class RegisterScreen extends StatelessWidget {
                     ServissoTextFormField(
                       controller: _passwordController,
                       labelText: 'password*',
-                    ),
-                    const SizedBox(height: 36),
-                    ServissoTextFormField(
-                      controller: _serviceCodeController,
-                      labelText: 'your car service unique code',
-                    ),
-                    const SizedBox(height: 36),
-                    ServissoTextFormField(
-                      controller: _carBrandController,
-                      labelText: 'main car brand',
-                    ),
-                    const SizedBox(height: 36),
-                    ServissoTextFormField(
-                      controller: _carModelController,
-                      labelText: 'main car model',
-                    ),
-                    const SizedBox(height: 24),
-                    const Icon(
-                      Icons.photo_camera_outlined,
-                      color: Color(0xFF00798C),
-                      size: 128,
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'add a car photo',
-                        style:
-                            Theme.of(context).textTheme.labelMedium!.copyWith(
-                                  fontWeight: FontWeight.w100,
-                                  color: Theme.of(context).colorScheme.primary,
-                                ),
-                      ),
                     ),
                   ],
                 ),

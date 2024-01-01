@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ServissoAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const ServissoAppBar({this.titleWidget, this.leadingWidget, super.key});
+  const ServissoAppBar(
+      {this.titleWidget, this.leadingWidget, this.onLeadingPressed, super.key});
 
   final Widget? titleWidget;
   final Widget? leadingWidget;
+  final void Function()? onLeadingPressed;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -17,20 +19,22 @@ class ServissoAppBar extends StatelessWidget implements PreferredSizeWidget {
       shadowColor: Colors.transparent,
       backgroundColor: Colors.transparent,
       leading: leadingWidget ??
-          GestureDetector(
-            onTap: () => context.pop(),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
-                borderRadius: const BorderRadius.horizontal(
-                  right: Radius.circular(24),
+          // TODO: Extract this button, to be reusable across app with different icons
+          ElevatedButton(
+            style: ButtonStyle(
+                shadowColor:
+                    MaterialStateProperty.all(Colors.black.withOpacity(0.15)),
+                shape: MaterialStateProperty.all(
+                  const RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.horizontal(right: Radius.circular(28)),
+                  ),
                 ),
-              ),
-              width: 16,
-              child: const Icon(
-                Icons.arrow_back_sharp,
-                size: 32,
-              ),
+                padding: MaterialStateProperty.all(EdgeInsets.zero)),
+            onPressed: onLeadingPressed ?? () => context.pop(),
+            child: const Icon(
+              Icons.arrow_back_sharp,
+              size: 32,
             ),
           ),
     );
