@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:servisso/core/widgets/servisso_app_bar.dart';
 import 'package:servisso/my_cars/controllers/bloc_manage_cars.dart';
 import 'package:servisso/my_cars/widgets/add_car_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyCarsScreen extends StatelessWidget {
   const MyCarsScreen({super.key});
@@ -13,15 +14,15 @@ class MyCarsScreen extends StatelessWidget {
       appBar: const ServissoAppBar(),
       floatingActionButton: const AddCarButton(),
       body: BlocBuilder<ManageCarsBloc, ManageCarsState>(
-          builder: (context, state) {
-        if (state.isLoading) {
-          return const Center(child: CircularProgressIndicator());
-        } else if (state.carList.isEmpty) {
-          return const Center(
-            child: Text('Add your first vehicle!'),
-          );
-        } else {
-          return ListView.builder(
+        builder: (context, state) {
+          if (state.isLoading) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (state.carList.isEmpty) {
+            return Center(
+              child: Text(AppLocalizations.of(context)!.addFirstVehicle),
+            );
+          } else {
+            return ListView.builder(
               itemCount: state.carList.length,
               itemBuilder: (context, index) {
                 final car = state.carList[index];
@@ -38,22 +39,25 @@ class MyCarsScreen extends StatelessWidget {
                     children: [
                       const Flexible(child: Placeholder()),
                       Flexible(
-                          child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [Text(car.brand), Text(car.model)],
-                          ),
-                          Text(car.year.toString())
-                        ],
-                      ))
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [Text(car.brand), Text(car.model)],
+                            ),
+                            Text(car.year.toString())
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 );
-              });
-        }
-      }),
+              },
+            );
+          }
+        },
+      ),
     );
   }
 }

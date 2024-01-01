@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servisso/core/main.dart';
 import 'package:servisso/core/widgets/servisso_elevated_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WelcomingScreen extends StatelessWidget {
   const WelcomingScreen({super.key});
@@ -17,7 +18,7 @@ class WelcomingScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Welcome to Servisso! Please, tell us who You are... ',
+                AppLocalizations.of(context)!.welcomeInfo,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.labelMedium,
               ),
@@ -26,12 +27,12 @@ class WelcomingScreen extends StatelessWidget {
               ),
               ServissoElevatedButton(
                 onPressed: () => context.pushNamed(ServissoRoutes.login.name),
-                title: 'I am a car owner',
+                title: AppLocalizations.of(context)!.carOwner,
               ),
               const SizedBox(height: 32),
               ServissoElevatedButton(
                 onPressed: () => context.pushNamed(ServissoRoutes.toWeb.name),
-                title: 'I am a car service owner',
+                title: AppLocalizations.of(context)!.carServiceOwner,
               ),
             ],
           ),

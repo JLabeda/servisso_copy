@@ -5,6 +5,7 @@ import 'package:servisso/core/main.dart';
 import 'package:servisso/core/widgets/servisso_app_bar.dart';
 import 'package:servisso/core/widgets/servisso_elevated_button.dart';
 import 'package:servisso/core/widgets/servisso_text_form_field.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -30,23 +31,23 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               Text(
-                'Login, in order to get full access to our system\'s features...',
+                AppLocalizations.of(context)!.loginInfo,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.labelMedium,
               ),
               const SizedBox(height: 48),
               ServissoTextFormField(
                 controller: _emailController,
-                labelText: 'e-mail',
+                labelText: AppLocalizations.of(context)!.eMail,
               ),
               const SizedBox(height: 36),
               ServissoTextFormField(
                 controller: _passwordController,
-                labelText: 'password',
+                labelText: AppLocalizations.of(context)!.password,
               ),
               const SizedBox(height: 48),
               ServissoElevatedButton(
-                title: 'Login',
+                title: AppLocalizations.of(context)!.login,
                 onPressed: () => context.goNamed(ServissoRoutes.landing.name),
               ),
               const Spacer(),
@@ -55,12 +56,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text:
-                          'Don\'t have an account yet? No problem, you can click the highlighted text in order to',
+                      text: AppLocalizations.of(context)!.noAccountInfo,
                       style: Theme.of(context).textTheme.labelMedium,
                     ),
                     TextSpan(
-                        text: ' create an account',
+                        text:
+                            ' ${AppLocalizations.of(context)!.createAnAccount.toLowerCase()}',
                         style:
                             Theme.of(context).textTheme.labelMedium!.copyWith(
                                   color: Theme.of(context).colorScheme.primary,

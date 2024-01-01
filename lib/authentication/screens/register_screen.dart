@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:servisso/core/widgets/servisso_app_bar.dart';
 import 'package:servisso/core/widgets/servisso_elevated_button.dart';
 import 'package:servisso/core/widgets/servisso_text_form_field.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
@@ -36,7 +37,7 @@ class RegisterScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(32),
               ),
               child: Text(
-                'We require some of your basic information in order to enable smooth communication with car services',
+                AppLocalizations.of(context)!.createAccountDialogInfo,
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
@@ -64,7 +65,7 @@ class RegisterScreen extends StatelessWidget {
         titleWidget: TextButton(
           onPressed: () => _registerFormKey.currentState!.reset(),
           child: Text(
-            'clear',
+            AppLocalizations.of(context)!.clear,
             style: Theme.of(context).textTheme.labelMedium!.copyWith(
                   color: Theme.of(context).colorScheme.primary,
                 ),
@@ -84,36 +85,36 @@ class RegisterScreen extends StatelessWidget {
                   controller: _scrollController,
                   children: [
                     Text(
-                      'Please provide some basic information in order to create a Servisso account.',
+                      AppLocalizations.of(context)!.createAccountInfo,
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.labelMedium,
                     ),
                     const SizedBox(height: 48),
                     ServissoTextFormField(
                       controller: _nameController,
-                      labelText: 'name*',
+                      labelText: '${AppLocalizations.of(context)!.name}*',
                     ),
                     const SizedBox(height: 36),
                     ServissoTextFormField(
                       controller: _lastNameController,
-                      labelText: 'surname*',
+                      labelText: '${AppLocalizations.of(context)!.surname}*',
                     ),
                     const SizedBox(height: 36),
                     ServissoTextFormField(
                       controller: _emailController,
-                      labelText: 'e-mail*',
+                      labelText: '${AppLocalizations.of(context)!.eMail}*',
                     ),
                     const SizedBox(height: 36),
                     ServissoTextFormField(
                       controller: _passwordController,
-                      labelText: 'password*',
+                      labelText: '${AppLocalizations.of(context)!.password}*',
                     ),
                   ],
                 ),
               ),
               const SizedBox(height: 24),
               ServissoElevatedButton(
-                title: 'Create an account',
+                title: AppLocalizations.of(context)!.createAnAccount,
                 onPressed: () {},
               ),
             ],

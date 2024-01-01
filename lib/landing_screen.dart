@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:servisso/core/main.dart';
 import 'package:servisso/core/widgets/servisso_drawer.dart';
 import 'package:servisso/core/widgets/servisso_app_bar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LandingScreen extends StatelessWidget {
   LandingScreen({super.key});
@@ -59,7 +60,7 @@ class LandingScreen extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        'My cars',
+                        AppLocalizations.of(context)!.myCars,
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontWeight: FontWeight.w600,
@@ -85,7 +86,7 @@ class LandingScreen extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      'My services',
+                      AppLocalizations.of(context)!.myServices,
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontWeight: FontWeight.w600,

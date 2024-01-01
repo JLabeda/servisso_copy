@@ -3,6 +3,7 @@ import 'package:servisso/core/widgets/servisso_app_bar.dart';
 
 import 'package:servisso/core/widgets/servisso_elevated_button.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ToWebScreen extends StatelessWidget {
   const ToWebScreen({super.key});
@@ -19,7 +20,7 @@ class ToWebScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'This mobile app is designed to be used by car owners - Your clients. If You are a car mechanic, please visit our Servisso web portal ',
+                AppLocalizations.of(context)!.headToWebInfo,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.labelMedium,
               ),
@@ -31,9 +32,11 @@ class ToWebScreen extends StatelessWidget {
                       launchUrl(Uri.parse('https://www.google.com')),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      Text('To web portal...'),
-                      Icon(
+                    children: [
+                      Text(
+                        AppLocalizations.of(context)!.toWebPortal,
+                      ),
+                      const Icon(
                         Icons.arrow_forward_rounded,
                         size: 32,
                       )
