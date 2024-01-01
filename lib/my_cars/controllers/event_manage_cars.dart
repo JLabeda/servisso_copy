@@ -2,18 +2,14 @@ part of 'bloc_manage_cars.dart';
 
 sealed class _ManageCarsEvent {}
 
-class _ManageCarsEventAddNewCar extends _ManageCarsEvent {
-  _ManageCarsEventAddNewCar(
-      {required this.brand, required this.model, this.year, this.mileage});
+class ManageCarsEventAddNewCar extends _ManageCarsEvent {
+  ManageCarsEventAddNewCar(this.car);
 
-  final String brand;
-  final String model;
-  final int? year;
-  final int? mileage;
+  final Car car;
 }
 
-class _ManageCarsEventEditCar extends _ManageCarsEvent {
-  _ManageCarsEventEditCar(
+class ManageCarsEventEditCar extends _ManageCarsEvent {
+  ManageCarsEventEditCar(
       {required this.id,
       required this.clientId,
       required this.brand,
@@ -29,9 +25,9 @@ class _ManageCarsEventEditCar extends _ManageCarsEvent {
   final int? mileage;
 }
 
-class _ManageCarsEventRemoveCar extends _ManageCarsEvent {
-  _ManageCarsEventRemoveCar({required this.id, required this.clientId});
+class ManageCarsEventRemoveCar extends _ManageCarsEvent {
+  ManageCarsEventRemoveCar({required this.carId, required this.clientId});
 
-  final String id;
+  final String carId;
   final String clientId;
 }
