@@ -35,7 +35,7 @@ final _goRouter = GoRouter(
           GoRoute(
             name: ServissoRoutes.addCar.name,
             path: ServissoRoutes.addCar.path,
-            builder: (context, state) => const AddCarScreen(),
+            builder: (context, state) => AddCarScreen(),
           ),
         ]),
   ],

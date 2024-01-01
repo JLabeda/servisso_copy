@@ -57,7 +57,7 @@ ThemeData _getTheme(BuildContext context) => ThemeData(
               borderRadius: BorderRadius.circular(28),
             ),
           ),
-          elevation: MaterialStateProperty.all(12),
+          elevation: MaterialStateProperty.all(4),
         ),
       ),
 
