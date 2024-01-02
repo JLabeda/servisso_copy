@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:servisso/core/widgets/servisso_app_bar.dart';
+import 'package:servisso/core/widgets/servisso_app_bar/servisso_app_bar.dart';
 import 'package:servisso/core/widgets/servisso_elevated_button.dart';
 import 'package:servisso/core/widgets/servisso_text_form_field.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

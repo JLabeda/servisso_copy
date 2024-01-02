@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servisso/core/main.dart';
-import 'package:servisso/core/widgets/servisso_drawer.dart';
-import 'package:servisso/core/widgets/servisso_app_bar.dart';
+import 'package:servisso/core/widgets/servisso_app_bar/app_bar_button.dart';
+import 'package:servisso/core/widgets/servisso_app_bar/servisso_drawer.dart';
+import 'package:servisso/core/widgets/servisso_app_bar/servisso_app_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -16,21 +17,9 @@ class LandingScreen extends StatelessWidget {
       drawer: const ServissoDrawer(),
       drawerScrimColor: Colors.transparent,
       appBar: ServissoAppBar(
-        leadingWidget: GestureDetector(
-          onTap: () => _scaffoldKey.currentState!.openDrawer(),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
-              borderRadius: const BorderRadius.horizontal(
-                right: Radius.circular(24),
-              ),
-            ),
-            width: 16,
-            child: const Icon(
-              Icons.menu,
-              size: 32,
-            ),
-          ),
+        leadingWidget: ServissoAppBarButton(
+          icon: const Icon(Icons.menu, size: 32),
+          onLeadingPressed: () => _scaffoldKey.currentState!.openDrawer(),
         ),
       ),
       backgroundColor: Theme.of(context).colorScheme.background,

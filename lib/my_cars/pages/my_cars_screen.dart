@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:servisso/core/widgets/servisso_app_bar.dart';
+import 'package:servisso/core/widgets/servisso_app_bar/servisso_app_bar.dart';
+import 'package:servisso/core/widgets/servisso_progress_indicator.dart';
 import 'package:servisso/my_cars/controllers/bloc_manage_cars.dart';
 import 'package:servisso/my_cars/widgets/add_car_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -16,7 +17,7 @@ class MyCarsScreen extends StatelessWidget {
       body: BlocBuilder<ManageCarsBloc, ManageCarsState>(
         builder: (context, state) {
           if (state.isLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return const ServissoProgressIndicator();
           } else if (state.carList.isEmpty) {
             return Center(
               child: Text(AppLocalizations.of(context)!.addFirstVehicle),
