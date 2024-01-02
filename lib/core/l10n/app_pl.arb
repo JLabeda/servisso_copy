@@ -1,39 +1,39 @@
 {
-    "welcomeInfo": "Welcome to Servisso! Please, tell us who You are...",
-    "carOwner": "I am a car owner",
-    "carServiceOwner": "I am a car service owner",
-    "loginInfo": "Login, in order to get full access to our system's features...",
+    "welcomeInfo": "Witaj w aplikacji mobilnej Servisso! Kim jesteś?",
+    "carOwner": "Jestem kierowcą pojazdu",
+    "carServiceOwner": "Prowadzę serwis samochodowy",
+    "loginInfo": "Zaloguj się, aby otrzymać pełen dostęp do funkcji Servisso",
     "@loginInfo": {
-    "description": "Information displayed to user on the login screen"
+    "description": "Informacja wyświetlana uzytkownikowi na ekranie logowania"
     },
     "eMail" : "e-mail",
-    "password" : "password",
+    "password" : "hasło",
     "login": "login",
-    "createAnAccount": "Create an account",
-    "noAccountInfo": "Don't have an account yet? No problem, you can click the highlighted text in order to",
+    "createAnAccount": "Stwórz konto",
+    "noAccountInfo": "Nie posiadasz jeszcze konta? Żaden proble, moesz nacisnąć na podświetlony tekst, aby je stworzyć",
     "@noAccountInfo": {
-    "description": "Information displayed to user about account creation"
+    "description": "Informacja wyświetlona uzytkownikowi o tworzeniu konta"
     },
-    "createAccountInfo": "Please provide some basic information in order to create a Servisso account.",
+    "createAccountInfo": "Podaj parę podstawowych informacji na swój temat, aby stworzyć konto",
     "@createAccountInfo": {
-    "description": "Information displayed to user on create account screen"
+    "description": "Informacja wyświetlona uzytkownikowi na ekranie tworzenia konta"
     },
-    "createAccountDialogInfo": "We require some of your basic information in order to enable smooth communication with car services",
-    "name": "name",
-    "surname": "surname", 
-    "clear": "clear",
-    "headToWebInfo": "This mobile app is designed to be used by car owners - Your clients. If You are a car mechanic, please visit our Servisso web portal ",
+    "createAccountDialogInfo": "Potrzebujemy paru podstawowych informacji na twój temat, aby móc zagwarantować łatwą komunikację między z serwisami pojazdów",
+    "name": "imię",
+    "surname": "nazwisko", 
+    "clear": "wyczyść",
+    "headToWebInfo": "Ta aplikacja mobilna została stworzona dla właścicieli pojazdów - Twoich klientów. Jeżeli prowadzisz serwis samochodowy, sprawdź nasz serwis internetowy ",
     "@headToWebInfo": {
-    "description": "Information displayed to user about difference between mobile Servisso app and web portal for garages"
+    "description": "Informacja wyświetlona dla uzytkownika, informująca o róznicy miedzy aplikacja dla kierowcow, a aplikacja dla serwisantów"
     },
-    "toWebPortal": "To web portal...",
-    "myCars": "My cars",
-    "myServices":"My Services",
-    "addFirstVehicle": "Add your first vehicle!",
-    "brand": "brand",
+    "toWebPortal": "Do portalu...",
+    "myCars": "Moje pojazdy",
+    "myServices":"Moje serwisy",
+    "addFirstVehicle": "Dodaj swój pierwszy pojazd!",
+    "brand": "marka",
     "model": "model", 
-    "year": "year", 
-    "mileage": "mileage",
-    "addCarPhoto": "add a car photo",
-    "addCar": "Add car"
+    "year": "rok", 
+    "mileage": "przebieg",
+    "addCarPhoto": "dodaj zdjęcie pojazdu",
+    "addCar": "Dodaj pojazd"
 }

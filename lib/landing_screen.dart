@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servisso/core/main.dart';
-import 'package:servisso/core/widgets/servisso_app_bar/app_bar_button.dart';
 import 'package:servisso/core/widgets/servisso_app_bar/servisso_drawer.dart';
 import 'package:servisso/core/widgets/servisso_app_bar/servisso_app_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -17,10 +16,8 @@ class LandingScreen extends StatelessWidget {
       drawer: const ServissoDrawer(),
       drawerScrimColor: Colors.transparent,
       appBar: ServissoAppBar(
-        leadingWidget: ServissoAppBarButton(
-          icon: const Icon(Icons.menu, size: 32),
-          onLeadingPressed: () => _scaffoldKey.currentState!.openDrawer(),
-        ),
+        icon: const Icon(Icons.menu),
+        onLeadingPressed: () => _scaffoldKey.currentState!.openDrawer(),
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
@@ -40,7 +37,6 @@ class LandingScreen extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary,
                       border: Border.all(
                         width: 2,
                         color: Theme.of(context).colorScheme.primary,
@@ -52,35 +48,38 @@ class LandingScreen extends StatelessWidget {
                         AppLocalizations.of(context)!.myCars,
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 24,
-                            color: Colors.white),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 24,
+                            ),
                       ),
                     ),
                   ),
                 ),
               ),
-              Card(
-                shape:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(32)),
-                elevation: 8,
-                child: Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2,
-                      color: Theme.of(context).colorScheme.primary,
+              GestureDetector(
+                onTap: () {},
+                child: Card(
+                  shape: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(32)),
+                  elevation: 8,
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 2,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      borderRadius: BorderRadius.circular(32),
                     ),
-                    borderRadius: BorderRadius.circular(32),
-                  ),
-                  child: Center(
-                    child: Text(
-                      AppLocalizations.of(context)!.myServices,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 24,
-                          ),
+                    child: Center(
+                      child: Text(
+                        AppLocalizations.of(context)!.myServices,
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 24,
+                            ),
+                      ),
                     ),
                   ),
                 ),
