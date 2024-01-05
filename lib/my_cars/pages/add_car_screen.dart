@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:servisso/core/widgets/servisso_app_bar.dart';
+import 'package:servisso/core/widgets/servisso_app_bar/servisso_app_bar.dart';
 import 'package:servisso/core/widgets/servisso_elevated_button.dart';
 import 'package:servisso/core/widgets/servisso_text_form_field.dart';
 import 'package:servisso/my_cars/controllers/bloc_manage_cars.dart';
 import 'package:servisso/my_cars/models/car/car.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddCarScreen extends StatelessWidget {
   AddCarScreen({super.key});
@@ -25,7 +26,7 @@ class AddCarScreen extends StatelessWidget {
         titleWidget: TextButton(
           onPressed: () => _registerFormKey.currentState!.reset(),
           child: Text(
-            'clear',
+            AppLocalizations.of(context)!.clear,
             style: Theme.of(context).textTheme.labelMedium!.copyWith(
                   color: Theme.of(context).colorScheme.primary,
                 ),
@@ -47,22 +48,22 @@ class AddCarScreen extends StatelessWidget {
                     const SizedBox(height: 48),
                     ServissoTextFormField(
                       controller: _brandController,
-                      labelText: 'brand*',
+                      labelText: '${AppLocalizations.of(context)!.brand}*',
                     ),
                     const SizedBox(height: 36),
                     ServissoTextFormField(
                       controller: _modelController,
-                      labelText: 'model*',
+                      labelText: '${AppLocalizations.of(context)!.model}*',
                     ),
                     const SizedBox(height: 36),
                     ServissoTextFormField(
                       controller: _yearController,
-                      labelText: 'year*',
+                      labelText: '${AppLocalizations.of(context)!.year}*',
                     ),
                     const SizedBox(height: 36),
                     ServissoTextFormField(
                       controller: _mileaegeController,
-                      labelText: 'mileage*',
+                      labelText: '${AppLocalizations.of(context)!.mileage}*',
                     ),
                     const SizedBox(height: 48),
                     const Icon(
@@ -73,7 +74,7 @@ class AddCarScreen extends StatelessWidget {
                     TextButton(
                       onPressed: () {},
                       child: Text(
-                        'add a car photo',
+                        AppLocalizations.of(context)!.addCarPhoto,
                         style:
                             Theme.of(context).textTheme.labelMedium!.copyWith(
                                   fontWeight: FontWeight.w100,
