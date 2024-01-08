@@ -10,7 +10,7 @@
     "password" : "hasło",
     "login": "login",
     "createAnAccount": "Stwórz konto",
-    "noAccountInfo": "Nie posiadasz jeszcze konta? Żaden proble, moesz nacisnąć na podświetlony tekst, aby je stworzyć",
+    "noAccountInfo": "Nie posiadasz jeszcze konta? Żaden problem, moesz nacisnąć na podświetlony tekst, aby je stworzyć",
     "@noAccountInfo": {
     "description": "Informacja wyświetlona uzytkownikowi o tworzeniu konta"
     },
