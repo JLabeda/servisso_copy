@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:servisso/authentication/controllers/bloc_auth.dart';
+import 'package:servisso/core/main.dart';
 import 'package:servisso/core/widgets/servisso_app_bar/servisso_app_bar.dart';
 import 'package:servisso/core/widgets/servisso_elevated_button.dart';
+import 'package:servisso/core/widgets/servisso_progress_indicator.dart';
 import 'package:servisso/core/widgets/servisso_text_form_field.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
 
   final _registerFormKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
-  final _lastNameController = TextEditingController();
+  final _surnameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _scrollController = ScrollController();
@@ -26,26 +29,28 @@ class RegisterScreen extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(32),
           ),
-          child: Stack(clipBehavior: Clip.none, children: [
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 4,
-                  color: const Color(0xFF00798C),
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 4,
+                    color: const Color(0xFF00798C),
+                  ),
+                  borderRadius: BorderRadius.circular(32),
                 ),
-                borderRadius: BorderRadius.circular(32),
+                child: Text(
+                  AppLocalizations.of(context)!.createAccountDialogInfo,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(fontWeight: FontWeight.w600, fontSize: 24),
+                ),
               ),
-              child: Text(
-                AppLocalizations.of(context)!.createAccountDialogInfo,
-                textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge!
-                    .copyWith(fontWeight: FontWeight.w600, fontSize: 24),
-              ),
-            ),
-            Positioned(
+              Positioned(
                 top: -32,
                 right: 0,
                 child: GestureDetector(
@@ -55,8 +60,10 @@ class RegisterScreen extends StatelessWidget {
                     color: Colors.white,
                     size: 32,
                   ),
-                )),
-          ]),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -73,53 +80,76 @@ class RegisterScreen extends StatelessWidget {
         ),
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(24, 36, 24, 48),
-        child: Form(
-          key: _registerFormKey,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Expanded(
-                child: ListView(
-                  controller: _scrollController,
+      body: BlocConsumer<AuthBloc, AuthState>(
+        listener: (context, state) {
+          if (state.isCreateAccountSuccess) {
+            context.goNamed(ServissoRoutes.landing.name);
+          }
+        },
+        builder: (context, state) {
+          if (state.isLoading) {
+            return const ServissoProgressIndicator();
+          } else {
+            return Padding(
+              padding: const EdgeInsets.fromLTRB(24, 36, 24, 48),
+              child: Form(
+                key: _registerFormKey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      AppLocalizations.of(context)!.createAccountInfo,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.labelMedium,
+                    Expanded(
+                      child: ListView(
+                        controller: _scrollController,
+                        children: [
+                          Text(
+                            AppLocalizations.of(context)!.createAccountInfo,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.labelMedium,
+                          ),
+                          const SizedBox(height: 48),
+                          ServissoTextFormField(
+                            controller: _nameController,
+                            labelText: '${AppLocalizations.of(context)!.name}*',
+                          ),
+                          const SizedBox(height: 36),
+                          ServissoTextFormField(
+                            controller: _surnameController,
+                            labelText:
+                                '${AppLocalizations.of(context)!.surname}*',
+                          ),
+                          const SizedBox(height: 36),
+                          ServissoTextFormField(
+                            controller: _emailController,
+                            labelText:
+                                '${AppLocalizations.of(context)!.eMail}*',
+                          ),
+                          const SizedBox(height: 36),
+                          ServissoTextFormField(
+                            controller: _passwordController,
+                            labelText:
+                                '${AppLocalizations.of(context)!.password}*',
+                          ),
+                        ],
+                      ),
                     ),
-                    const SizedBox(height: 48),
-                    ServissoTextFormField(
-                      controller: _nameController,
-                      labelText: '${AppLocalizations.of(context)!.name}*',
-                    ),
-                    const SizedBox(height: 36),
-                    ServissoTextFormField(
-                      controller: _lastNameController,
-                      labelText: '${AppLocalizations.of(context)!.surname}*',
-                    ),
-                    const SizedBox(height: 36),
-                    ServissoTextFormField(
-                      controller: _emailController,
-                      labelText: '${AppLocalizations.of(context)!.eMail}*',
-                    ),
-                    const SizedBox(height: 36),
-                    ServissoTextFormField(
-                      controller: _passwordController,
-                      labelText: '${AppLocalizations.of(context)!.password}*',
+                    const SizedBox(height: 24),
+                    ServissoElevatedButton(
+                      title: AppLocalizations.of(context)!.createAnAccount,
+                      onPressed: () => context.read<AuthBloc>().add(
+                            AuthEventRegister(
+                              name: _nameController.text,
+                              surname: _surnameController.text,
+                              email: _emailController.text,
+                              password: _passwordController.text,
+                            ),
+                          ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 24),
-              ServissoElevatedButton(
-                title: AppLocalizations.of(context)!.createAnAccount,
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
+            );
+          }
+        },
       ),
     );
   }

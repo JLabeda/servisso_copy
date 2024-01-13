@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servisso/core/main.dart';
-import 'package:servisso/core/widgets/servisso_app_bar/servisso_drawer.dart';
 import 'package:servisso/core/widgets/servisso_app_bar/servisso_app_bar.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:servisso/core/widgets/servisso_drawer.dart';
 
 class LandingScreen extends StatelessWidget {
   LandingScreen({super.key});
@@ -22,17 +22,18 @@ class LandingScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
           child: GridView.count(
             crossAxisSpacing: 24,
             mainAxisSpacing: 24,
             crossAxisCount: 2,
             children: [
               GestureDetector(
-                onTap: () => context.pushNamed(ServissoRoutes.myCars.name),
+                onTap: () => context.pushNamed(ServissoRoutes.myVehicles.name),
                 child: Card(
                   shape: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(32)),
+                    borderRadius: BorderRadius.circular(32),
+                  ),
                   elevation: 8,
                   child: Container(
                     padding: const EdgeInsets.all(16),
@@ -60,7 +61,8 @@ class LandingScreen extends StatelessWidget {
                 onTap: () {},
                 child: Card(
                   shape: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(32)),
+                    borderRadius: BorderRadius.circular(32),
+                  ),
                   elevation: 8,
                   child: Container(
                     padding: const EdgeInsets.all(16),

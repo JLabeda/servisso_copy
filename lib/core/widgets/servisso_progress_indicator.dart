@@ -18,10 +18,11 @@ class _ServissoProgressIndicatorState extends State<ServissoProgressIndicator> {
   @override
   void initState() {
     _timer = Timer.periodic(
-        _duration,
-        (_) => setState(() {
-              _turns += 1;
-            }));
+      _duration,
+      (_) => setState(() {
+        _turns += 1;
+      }),
+    );
     Timer.run(() {
       setState(() {
         _turns += 1;

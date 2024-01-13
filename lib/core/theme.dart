@@ -10,18 +10,36 @@ ThemeData _getTheme(BuildContext context) => ThemeData(
       textTheme: TextTheme(
         // Title textTheme:
         titleLarge: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontSize: 32, fontFamily: _primaryFontFamily, color: _primary),
+              fontSize: 32,
+              fontFamily: _primaryFontFamily,
+              color: _primary,
+            ),
         titleMedium: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontSize: 24, fontFamily: _primaryFontFamily, color: _primary),
+              fontSize: 24,
+              fontFamily: _primaryFontFamily,
+              color: _primary,
+            ),
         labelMedium: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontSize: 32, fontFamily: _primaryFontFamily, color: Colors.black),
+              fontSize: 32,
+              fontFamily: _primaryFontFamily,
+              color: Colors.black,
+            ),
         // Body textTheme:
         bodyLarge: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontSize: 16, fontFamily: _primaryFontFamily, color: _primary),
+              fontSize: 16,
+              fontFamily: _primaryFontFamily,
+              color: _primary,
+            ),
         bodyMedium: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontSize: 12, fontFamily: _primaryFontFamily, color: _primary),
+              fontSize: 12,
+              fontFamily: _primaryFontFamily,
+              color: _primary,
+            ),
         bodySmall: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontSize: 8, fontFamily: _primaryFontFamily, color: _primary),
+              fontSize: 8,
+              fontFamily: _primaryFontFamily,
+              color: _primary,
+            ),
       ),
 
       // TEXT FORM STYLE
@@ -63,15 +81,16 @@ ThemeData _getTheme(BuildContext context) => ThemeData(
 
       // COLORS
       colorScheme: const ColorScheme(
-          brightness: Brightness.light,
-          primary: _primary,
-          onPrimary: _background,
-          secondary: Color(0xFFF39237),
-          onSecondary: Color(0xFFFFFFFF),
-          error: Colors.red,
-          onError: Color(0xFFFFFFFF),
-          background: _background,
-          onBackground: _primary,
-          surface: _background,
-          onSurface: _background),
+        brightness: Brightness.light,
+        primary: _primary,
+        onPrimary: _background,
+        secondary: Color(0xFFF39237),
+        onSecondary: Color(0xFFFFFFFF),
+        error: Colors.red,
+        onError: Color(0xFFFFFFFF),
+        background: _background,
+        onBackground: _primary,
+        surface: _background,
+        onSurface: _background,
+      ),
     );

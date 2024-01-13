@@ -10,7 +10,7 @@ class ServissoTextFormField extends StatelessWidget {
 
   final TextEditingController controller;
   final String labelText;
-  final String? Function(String?)? validator;
+  final String? Function(String? input)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class ServissoTextFormField extends StatelessWidget {
             blurRadius: 5,
             offset: const Offset(0, 8),
             color: Colors.black.withOpacity(0.2),
-          )
+          ),
         ],
       ),
       child: TextFormField(
@@ -30,8 +30,9 @@ class ServissoTextFormField extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           label: Padding(
-              padding: const EdgeInsets.only(bottom: 36),
-              child: Text(labelText)),
+            padding: const EdgeInsets.only(bottom: 36),
+            child: Text(labelText),
+          ),
           floatingLabelBehavior: FloatingLabelBehavior.always,
         ),
       ),

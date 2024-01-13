@@ -16,14 +16,14 @@ class ServissoAppBarButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-          shadowColor:
-              MaterialStateProperty.all(Colors.black.withOpacity(0.15)),
-          shape: MaterialStateProperty.all(
-            const RoundedRectangleBorder(
-              borderRadius: BorderRadius.horizontal(right: Radius.circular(28)),
-            ),
+        shadowColor: MaterialStateProperty.all(Colors.black.withOpacity(0.15)),
+        shape: MaterialStateProperty.all(
+          const RoundedRectangleBorder(
+            borderRadius: BorderRadius.horizontal(right: Radius.circular(28)),
           ),
-          padding: MaterialStateProperty.all(EdgeInsets.zero)),
+        ),
+        padding: MaterialStateProperty.all(EdgeInsets.zero),
+      ),
       onPressed: onLeadingPressed ??
           () => context.canPop()
               ? context.pop()

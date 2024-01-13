@@ -28,16 +28,17 @@ final _goRouter = GoRouter(
       builder: (context, state) => LandingScreen(),
     ),
     GoRoute(
-        name: ServissoRoutes.myCars.name,
-        path: ServissoRoutes.myCars.path,
-        builder: (context, state) => const MyCarsScreen(),
-        routes: [
-          GoRoute(
-            name: ServissoRoutes.addCar.name,
-            path: ServissoRoutes.addCar.path,
-            builder: (context, state) => AddCarScreen(),
-          ),
-        ]),
+      name: ServissoRoutes.myVehicles.name,
+      path: ServissoRoutes.myVehicles.path,
+      builder: (context, state) => const MyVehiclesScreen(),
+      routes: [
+        GoRoute(
+          name: ServissoRoutes.addVehicle.name,
+          path: ServissoRoutes.addVehicle.path,
+          builder: (context, state) => AddVehicleScreen(),
+        ),
+      ],
+    ),
   ],
 );
 
@@ -47,8 +48,8 @@ enum ServissoRoutes {
   toWeb(path: '/to-web', name: 'to-web'),
   createAccount(path: '/create-account', name: 'create-account'),
   landing(path: '/landing', name: 'landing'),
-  myCars(path: '/my-cars', name: 'my-cars'),
-  addCar(path: 'add-car', name: 'add-car');
+  myVehicles(path: '/my-vehicles', name: 'my-vehicles'),
+  addVehicle(path: 'add-vehicle', name: 'add-vehicle');
 
   const ServissoRoutes({required this.name, required this.path});
   final String name;

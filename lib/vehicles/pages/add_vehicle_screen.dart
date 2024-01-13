@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
-
 import 'package:servisso/core/widgets/servisso_app_bar/servisso_app_bar.dart';
 import 'package:servisso/core/widgets/servisso_elevated_button.dart';
 import 'package:servisso/core/widgets/servisso_text_form_field.dart';
-import 'package:servisso/my_cars/controllers/bloc_manage_cars.dart';
-import 'package:servisso/my_cars/models/car/car.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:servisso/vehicles/controllers/bloc_manage_vehicles.dart';
+import 'package:servisso/vehicles/models/vehicle/vehicle.dart';
 
-class AddCarScreen extends StatelessWidget {
-  AddCarScreen({super.key});
+class AddVehicleScreen extends StatelessWidget {
+  AddVehicleScreen({super.key});
 
   final _registerFormKey = GlobalKey<FormState>();
   final _brandController = TextEditingController();
@@ -87,22 +86,23 @@ class AddCarScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               ServissoElevatedButton(
-                  title: 'Add car',
-                  onPressed: () {
-                    context.read<ManageCarsBloc>().add(
-                          //TODO: Fix clientId
-                          ManageCarsEventAddNewCar(
-                            Car(
-                              clientId: '123123',
-                              brand: _brandController.text,
-                              model: _modelController.text,
-                              year: int.parse(_yearController.text),
-                              mileage: int.parse(_mileaegeController.text),
-                            ),
+                title: 'Add vehicle',
+                onPressed: () {
+                  context.read<ManageVehiclesBloc>().add(
+                        // TODO(Janek): Fix clientId
+                        ManageVehiclesEventAddNewVehicle(
+                          Vehicle(
+                            userId: '123123',
+                            brand: _brandController.text,
+                            model: _modelController.text,
+                            year: int.parse(_yearController.text),
+                            mileage: int.parse(_mileaegeController.text),
                           ),
-                        );
-                    context.pop();
-                  })
+                        ),
+                      );
+                  context.pop();
+                },
+              ),
             ],
           ),
         ),

@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:servisso/core/widgets/servisso_app_bar/app_bar_button.dart';
 
 class ServissoAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const ServissoAppBar(
-      {this.titleWidget, this.icon, this.onLeadingPressed, super.key});
+  const ServissoAppBar({
+    this.titleWidget,
+    this.icon,
+    this.onLeadingPressed,
+    super.key,
+  });
 
   final Widget? titleWidget;
   final Icon? icon;

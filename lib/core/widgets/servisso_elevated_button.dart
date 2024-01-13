@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
 class ServissoElevatedButton extends StatelessWidget {
-  const ServissoElevatedButton(
-      {this.title, this.child, this.onPressed, super.key})
-      : assert(child != null || title != null,
-            'ServissonElevatedButton has to take either a title, or a child widget!'),
-        assert(child == null || title == null,
-            'ServissonElevatedButton can\'t take both title and child widget at the same time!');
+  const ServissoElevatedButton({
+    this.title,
+    this.child,
+    this.onPressed,
+    super.key,
+  })  : assert(
+          child != null || title != null,
+          'ServissonElevatedButton has to take either a title, or a child widget!',
+        ),
+        assert(
+          child == null || title == null,
+          'ServissonElevatedButton can\'t take both title and child widget at the same time!',
+        );
 
   final String? title;
   final Widget? child;
