@@ -1,27 +1,17 @@
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:servisso/authentication/interface/auth_interface.dart';
-import 'package:servisso/authentication/models/servisso_user.dart';
+import 'package:servisso/authentication/models/user.dart';
 import 'package:servisso/core/dio/dio_client.dart';
+import 'package:servisso/core/main.dart';
 import 'package:servisso/core/servisso_exception.dart';
 
 class AuthService implements AuthInterface {
-  AuthService(this._dioClient);
+  AuthService();
 
-  final DioClient _dioClient;
-  @override
-  Future<void> changePassword() {
-    // TODO(Janek): implement changePassword
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<void> deleteAccount() {
-    // TODO(Janek): implement deleteAccount
-    throw UnimplementedError();
-  }
+  late DioClient dioClient = getIt.get<DioClientBloc>().state;
 
   @override
   Future<Either<ServissoException, UserCredential>> createFirebaseAccount(
@@ -46,11 +36,11 @@ class AuthService implements AuthInterface {
   }
 
   @override
-  Future<Either<ServissoException, ServissoUser>> createServissoAccount(
-    ServissoUser user,
+  Future<Either<ServissoException, User>> createServissoAccount(
+    User user,
   ) async {
     try {
-      final response = await _dioClient.dio.post(
+      final response = await dioClient.dio.post(
         'users',
         data: {
           'id': user.id,
@@ -61,7 +51,7 @@ class AuthService implements AuthInterface {
           'servicesIdList': user.servicesIdList,
         },
       );
-      return Right(ServissoUser.fromJson(response.data));
+      return Right(User.fromJson(response.data));
     } catch (e) {
       log('Error: $e');
       return const Left(ServissoException.auth());
@@ -69,14 +59,37 @@ class AuthService implements AuthInterface {
   }
 
   @override
-  Future<Either<ServissoException, Unit>> login({
+  Future<void> changePassword() {
+    // TODO(Janek): implement changePassword
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> deleteAccount() {
+    // TODO(Janek): implement deleteAccount
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<ServissoException, UserCredential>> login({
     required String email,
     required String password,
   }) async {
     try {
-      await FirebaseAuth.instance
+      final credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      return const Right(unit);
+      return Right(credential);
+    } catch (e) {
+      log('Error: $e');
+      return const Left(ServissoException.auth());
+    }
+  }
+
+  @override
+  Future<Either<ServissoException, User>> getUser(String userId) async {
+    try {
+      final response = await dioClient.dio.get('users/$userId');
+      return Right(User.fromJson(response.data as Map<String, dynamic>));
     } catch (e) {
       log('Error: $e');
       return const Left(ServissoException.auth());

@@ -2,36 +2,28 @@ part of 'bloc_manage_vehicles.dart';
 
 sealed class ManageVehiclesEvent {}
 
-class ManageVehiclesEventAddNewVehicle extends ManageVehiclesEvent {
-  ManageVehiclesEventAddNewVehicle(this.vehicle);
+class AddVehicleEvent extends ManageVehiclesEvent {
+  AddVehicleEvent({
+    required this.brand,
+    required this.model,
+    required this.productionYear,
+    required this.odometerValue,
+    required this.type,
+  });
+  final String brand;
+  final String model;
+  final int productionYear;
+  final int odometerValue;
+  final VehicleType type;
+}
 
+class GetUserVehiclesEvent extends ManageVehiclesEvent {}
+
+class SelectVehicleEvent extends ManageVehiclesEvent {
+  SelectVehicleEvent(this.vehicle);
   final Vehicle vehicle;
 }
 
-class ManageVehiclesEventEditVehicle extends ManageVehiclesEvent {
-  ManageVehiclesEventEditVehicle({
-    required this.id,
-    required this.userId,
-    required this.brand,
-    required this.model,
-    this.year,
-    this.mileage,
-  });
-
-  final String id;
-  final String userId;
-  final String brand;
-  final String model;
-  final int? year;
-  final int? mileage;
-}
-
-class ManageVehiclesEventRemoveVehicle extends ManageVehiclesEvent {
-  ManageVehiclesEventRemoveVehicle({
-    required this.vehicleId,
-    required this.userId,
-  });
-
-  final String vehicleId;
-  final String userId;
+class RemoveVehicleEvent extends ManageVehiclesEvent {
+  RemoveVehicleEvent();
 }

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:dio/dio.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,13 +5,16 @@ import 'package:servisso/core/env.dart';
 
 final _servissoBackendBaseUrl = Env.servissoBackendUrl;
 
+/// Remember that [DioClient] used in services which fetch Backend data is always declared as late.
+///
+///  At this stage of project it is the easiest way to ensure latest userId & token passed in headers
 class DioClientBloc extends Bloc<DioClientEvent, DioClient> {
   DioClientBloc() : super(DioClient()) {
     on<DioClientEventUpdateDioData>(_onUpdateDioData);
   }
   final _dioClient = DioClient();
 
-  FutureOr<void> _onUpdateDioData(
+  void _onUpdateDioData(
     DioClientEventUpdateDioData event,
     Emitter emit,
   ) {

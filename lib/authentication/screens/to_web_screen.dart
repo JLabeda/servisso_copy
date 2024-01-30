@@ -27,6 +27,7 @@ class ToWebScreen extends StatelessWidget {
                 height: 128,
               ),
               ServissoElevatedButton(
+                // TODO(Janek): When web page is ready, change url
                 onPressed: () => launchUrl(Uri.parse('https://www.google.com')),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

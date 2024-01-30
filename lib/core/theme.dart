@@ -4,6 +4,8 @@ const Color _primary = Color(0xFF00798C);
 const Color _background = Color(0xFFEFF1F3);
 const String _primaryFontFamily = 'Inter';
 
+// TODO(Janek): When designs are ready - harness theming (textThemes mostly as they are +/- random rn)
+
 ThemeData _getTheme(BuildContext context) => ThemeData(
       useMaterial3: true,
       // TEXT STYLE

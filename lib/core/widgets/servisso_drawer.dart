@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:servisso/authentication/controllers/bloc_auth.dart';
 import 'package:servisso/core/main.dart';
 
-// TODO(Janek): Refactor: navigation, localization
+// TODO(Janek): Strings localization
 
 class ServissoDrawer extends StatelessWidget {
   const ServissoDrawer({super.key});
@@ -70,7 +70,7 @@ class ServissoDrawer extends StatelessWidget {
               const Spacer(),
               GestureDetector(
                 onTap: () {
-                  context.read<AuthBloc>().add(AuthEventLogout());
+                  context.read<AuthBloc>().add(LogoutEvent());
                   // TODO(Janek): Handle failing case (Show flushbar?)
                 },
                 child: Text(

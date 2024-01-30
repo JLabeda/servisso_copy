@@ -4,14 +4,18 @@ part of 'bloc_manage_vehicles.dart';
 class ManageVehiclesState with _$ManageVehiclesState {
   const factory ManageVehiclesState({
     required bool isLoading,
-    required List<Vehicle> vehicleList,
+    required Option<Either<ServissoException, List<Vehicle>>> vehicleResult,
   }) = _ManageVehiclesState;
 
-  factory ManageVehiclesState.zero() => const ManageVehiclesState(
+  factory ManageVehiclesState.zero() => ManageVehiclesState(
         isLoading: false,
-        vehicleList: [],
+        vehicleResult: none(),
       );
+}
 
-  factory ManageVehiclesState.fromJson(Map<String, Object?> json) =>
-      _$ManageVehiclesStateFromJson(json);
+extension ManageVehiclesStateExt on ManageVehiclesState {
+  List<Vehicle>? get vehicleList => vehicleResult.fold(
+        () => null,
+        (a) => a.fold((l) => null, (r) => r),
+      );
 }

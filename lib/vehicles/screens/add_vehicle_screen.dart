@@ -15,7 +15,7 @@ class AddVehicleScreen extends StatelessWidget {
   final _brandController = TextEditingController();
   final _modelController = TextEditingController();
   final _yearController = TextEditingController();
-  final _mileaegeController = TextEditingController();
+  final _odometerController = TextEditingController();
   final _scrollController = ScrollController();
 
   @override
@@ -61,7 +61,7 @@ class AddVehicleScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 36),
                     ServissoTextFormField(
-                      controller: _mileaegeController,
+                      controller: _odometerController,
                       labelText: '${AppLocalizations.of(context)!.mileage}*',
                     ),
                     const SizedBox(height: 48),
@@ -89,15 +89,12 @@ class AddVehicleScreen extends StatelessWidget {
                 title: 'Add vehicle',
                 onPressed: () {
                   context.read<ManageVehiclesBloc>().add(
-                        // TODO(Janek): Fix clientId
-                        ManageVehiclesEventAddNewVehicle(
-                          Vehicle(
-                            userId: '123123',
-                            brand: _brandController.text,
-                            model: _modelController.text,
-                            year: int.parse(_yearController.text),
-                            mileage: int.parse(_mileaegeController.text),
-                          ),
+                        AddVehicleEvent(
+                          brand: _brandController.text,
+                          model: _modelController.text,
+                          productionYear: int.parse(_yearController.text),
+                          odometerValue: int.parse(_odometerController.text),
+                          type: VehicleType.passenger,
                         ),
                       );
                   context.pop();

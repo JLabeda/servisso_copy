@@ -2,12 +2,12 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'servisso_user.freezed.dart';
-part 'servisso_user.g.dart';
+part 'user.freezed.dart';
+part 'user.g.dart';
 
 @freezed
-class ServissoUser with _$ServissoUser {
-  const factory ServissoUser({
+class User with _$User {
+  const factory User({
     required String name,
     required String surname,
     required String email,
@@ -15,8 +15,7 @@ class ServissoUser with _$ServissoUser {
     @Default([]) List<String> vehicleIdList,
     @Default([]) List<String> servicesIdList,
     @JsonKey(name: 'created_at') DateTime? createdAt,
-  }) = _ServissoUser;
+  }) = _User;
 
-  factory ServissoUser.fromJson(Map<String, Object?> json) =>
-      _$ServissoUserFromJson(json);
+  factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
 }

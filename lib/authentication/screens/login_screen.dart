@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (context.read<AuthBloc>().state.isLoginSuccess) {
-            context.goNamed(ServissoRoutes.landing.name);
+            context.goNamed(ServissoRoutes.booting.name);
           }
         },
         builder: (context, state) {
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         if (_formKey.currentState?.validate() ?? false) {
                           context.read<AuthBloc>().add(
-                                AuthEventLogin(
+                                LoginEvent(
                                   email: _emailController.text,
                                   password: _passwordController.text,
                                 ),

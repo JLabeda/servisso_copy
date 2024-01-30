@@ -16,7 +16,7 @@ class LandingScreen extends StatelessWidget {
       drawer: const ServissoDrawer(),
       drawerScrimColor: Colors.transparent,
       appBar: ServissoAppBar(
-        icon: const Icon(Icons.menu),
+        leadingIcon: const Icon(Icons.menu),
         onLeadingPressed: () => _scaffoldKey.currentState!.openDrawer(),
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
@@ -57,6 +57,7 @@ class LandingScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              // TODO(Janek): Implement My Services feature (BE first)
               GestureDetector(
                 onTap: () {},
                 child: Card(

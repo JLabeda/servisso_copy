@@ -21,52 +21,6 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(
-      Duration.zero,
-      () => showDialog(
-        context: context,
-        builder: (context) => Dialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(32),
-          ),
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 4,
-                    color: const Color(0xFF00798C),
-                  ),
-                  borderRadius: BorderRadius.circular(32),
-                ),
-                child: Text(
-                  AppLocalizations.of(context)!.createAccountDialogInfo,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .copyWith(fontWeight: FontWeight.w600, fontSize: 24),
-                ),
-              ),
-              Positioned(
-                top: -32,
-                right: 0,
-                child: GestureDetector(
-                  onTap: () => context.pop(),
-                  child: const Icon(
-                    Icons.cancel_outlined,
-                    color: Colors.white,
-                    size: 32,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
     return Scaffold(
       appBar: ServissoAppBar(
         titleWidget: TextButton(
@@ -82,7 +36,7 @@ class RegisterScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
-          if (state.isCreateAccountSuccess) {
+          if (state.isUserValid) {
             context.goNamed(ServissoRoutes.landing.name);
           }
         },
@@ -136,7 +90,7 @@ class RegisterScreen extends StatelessWidget {
                     ServissoElevatedButton(
                       title: AppLocalizations.of(context)!.createAnAccount,
                       onPressed: () => context.read<AuthBloc>().add(
-                            AuthEventRegister(
+                            RegisterEvent(
                               name: _nameController.text,
                               surname: _surnameController.text,
                               email: _emailController.text,

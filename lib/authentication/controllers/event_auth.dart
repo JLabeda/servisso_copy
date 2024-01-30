@@ -2,14 +2,14 @@ part of 'bloc_auth.dart';
 
 sealed class AuthEvent {}
 
-class AuthEventLogin extends AuthEvent {
-  AuthEventLogin({required this.email, required this.password});
+class LoginEvent extends AuthEvent {
+  LoginEvent({required this.email, required this.password});
   final String email;
   final String password;
 }
 
-class AuthEventRegister extends AuthEvent {
-  AuthEventRegister({
+class RegisterEvent extends AuthEvent {
+  RegisterEvent({
     required this.email,
     required this.password,
     required this.name,
@@ -21,10 +21,15 @@ class AuthEventRegister extends AuthEvent {
   final String password;
 }
 
-class AuthEventLogout extends AuthEvent {
-  AuthEventLogout();
+// TODO(Janek): When app gets bigger and account deletion proccess is introduced, move GetUserEvent to some sort of user management bloc
+class GetUserEvent extends AuthEvent {
+  GetUserEvent();
 }
 
-class AuthEventReset extends AuthEvent {
-  AuthEventReset();
+class LogoutEvent extends AuthEvent {
+  LogoutEvent();
+}
+
+class AuthResetEvent extends AuthEvent {
+  AuthResetEvent();
 }
