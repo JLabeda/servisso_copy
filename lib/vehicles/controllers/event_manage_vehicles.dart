@@ -2,6 +2,10 @@ part of 'bloc_manage_vehicles.dart';
 
 sealed class ManageVehiclesEvent {}
 
+class ResetEvent extends ManageVehiclesEvent {
+  ResetEvent();
+}
+
 class AddVehicleEvent extends ManageVehiclesEvent {
   AddVehicleEvent({
     required this.brand,
