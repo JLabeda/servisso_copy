@@ -32,7 +32,7 @@ class MyVehiclesScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 final vehicle = state.vehicleList![index];
                 return Hero(
-                  tag: vehicle.toString(),
+                  tag: ValueKey(vehicle.id),
                   child: GestureDetector(
                     onTap: () {
                       context

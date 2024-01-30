@@ -19,18 +19,19 @@ class VehicleTile extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Flexible(child: Placeholder()),
+          const Flexible(
+            flex: 5,
+            child: Placeholder(),
+          ),
           Flexible(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            flex: 4,
+            child: Column(
               children: [
-                Column(
-                  children: [
-                    Text(vehicle.brand),
-                    Text(vehicle.model),
-                  ],
+                RichText(text: TextSpan(text: vehicle.brand)),
+                RichText(text: TextSpan(text: vehicle.model)),
+                RichText(
+                  text: TextSpan(text: vehicle.productionYear.toString()),
                 ),
-                Text(vehicle.productionYear.toString()),
               ],
             ),
           ),

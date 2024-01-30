@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servisso/core/widgets/servisso_app_bar/servisso_app_bar.dart';
 import 'package:servisso/vehicles/controllers/bloc_manage_vehicles.dart';
+import 'package:servisso/vehicles/widgets/vehicle_tile.dart';
 
 class VehicleDetailsScreen extends StatelessWidget {
   const VehicleDetailsScreen({super.key});
@@ -23,8 +24,8 @@ class VehicleDetailsScreen extends StatelessWidget {
         },
       ),
       body: Hero(
-        tag: vehicle.toString(),
-        child: Center(child: Text(vehicle.brand)),
+        tag: ValueKey(vehicle.id),
+        child: Center(child: VehicleTile(vehicle)),
       ),
     );
   }
