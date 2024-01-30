@@ -14,6 +14,7 @@ App idea is to provide Mobile App (Vehicle owner) to Web Portal (Vehicle service
 * In this project I use BLoC for state management.
 * For navigation GoRouter with named routes is used.
 * AppLocalizations with .arb files for polish, english & ukrainian translations (however no way of changing locale from within the app as of now :smiley:).
+* GetIt used for dependency injection
 * First feature is on the way - user can add vehicle to his account and remove them
 
 #### Also to be noted:
