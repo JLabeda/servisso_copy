@@ -25,11 +25,15 @@ class ManageVehiclesBloc
     on<GetUserVehiclesEvent>(_onGetUserVehicles);
     on<SelectVehicleEvent>(_onSelectVehicle);
     on<RemoveVehicleEvent>(_onRemoveVehicle);
+    on<ResetEvent>(_onReset);
   }
 
   final VehiclesService _service;
   final List<Vehicle> _vehicleList = [];
   late Vehicle selectedVehicle;
+
+  void _onReset(ResetEvent event, Emitter emit) =>
+      emit(ManageVehiclesState.zero());
 
   Future<void> _onAddNewVehicle(
     AddVehicleEvent event,

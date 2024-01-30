@@ -17,6 +17,7 @@ class AuthListener extends StatelessWidget {
       if (user == null) {
         if (context.read<AuthBloc>().state.isLogoutSuccess) {
           context.read<AuthBloc>().add(AuthResetEvent());
+          context.read<ManageVehiclesBloc>().add(ResetEvent());
           router.goNamed(ServissoRoutes.login.name);
         }
         // TODO(Janek): For later: What if user becomes null, but no logout action took place? Probably enforce logout on app?
