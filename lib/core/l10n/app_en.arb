@@ -1,0 +1,39 @@
+{
+    "welcomeInfo": "Welcome to Servisso! Please, tell us who You are...",
+    "carOwner": "I am a car owner",
+    "carServiceOwner": "I am a car service owner",
+    "loginInfo": "Log in to get full access to our system's features...",
+    "@loginInfo": {
+    "description": "Information displayed to the user on the login screen"
+    },
+    "eMail" : "e-mail",
+    "password" : "password",
+    "login": "login",
+    "createAnAccount": "Create an account",
+    "noAccountInfo": "Don't have an account yet? No problem - click the highlighted text to create one",
+    "@noAccountInfo": {
+    "description": "Information displayed to user about account creation"
+    },
+    "createAccountInfo": "Please provide your basic information to create a Servisso account.",
+    "@createAccountInfo": {
+    "description": "Information displayed to user on create account screen"
+    },
+    "createAccountDialogInfo": "We require your basic information to enable smooth communication with car services",
+    "name": "name",
+    "surname": "surname", 
+    "clear": "clear",
+    "headToWebInfo": "This mobile app is designed for car owners - Your clients. If You are a car mechanic, please visit Servisso web portal",
+    "@headToWebInfo": {
+    "description": "Information displayed to user about difference between mobile Servisso app and web portal for garages"
+    },
+    "toWebPortal": "To web portal...",
+    "myCars": "My cars",
+    "myServices":"My Services",
+    "addFirstVehicle": "Add your first vehicle!",
+    "brand": "brand",
+    "model": "model", 
+    "year": "year", 
+    "mileage": "mileage",
+    "addCarPhoto": "add a car photo",
+    "addCar": "Add car"
+}

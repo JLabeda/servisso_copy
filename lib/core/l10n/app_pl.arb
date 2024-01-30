@@ -1,0 +1,39 @@
+{
+    "welcomeInfo": "Witaj w aplikacji mobilnej Servisso! Kim jesteś?",
+    "carOwner": "Jestem kierowcą pojazdu",
+    "carServiceOwner": "Prowadzę serwis samochodowy",
+    "loginInfo": "Zaloguj się, aby otrzymać pełen dostęp do funkcji Servisso",
+    "@loginInfo": {
+    "description": "Informacja wyświetlana uzytkownikowi na ekranie logowania"
+    },
+    "eMail" : "e-mail",
+    "password" : "hasło",
+    "login": "login",
+    "createAnAccount": "Stwórz konto",
+    "noAccountInfo": "Nie posiadasz jeszcze konta? Żaden problem, moesz nacisnąć na podświetlony tekst, aby je stworzyć",
+    "@noAccountInfo": {
+    "description": "Informacja wyświetlona uzytkownikowi o tworzeniu konta"
+    },
+    "createAccountInfo": "Podaj parę podstawowych informacji na swój temat, aby stworzyć konto",
+    "@createAccountInfo": {
+    "description": "Informacja wyświetlona uzytkownikowi na ekranie tworzenia konta"
+    },
+    "createAccountDialogInfo": "Potrzebujemy paru podstawowych informacji na twój temat, aby móc zagwarantować łatwą komunikację między z serwisami pojazdów",
+    "name": "imię",
+    "surname": "nazwisko", 
+    "clear": "wyczyść",
+    "headToWebInfo": "Ta aplikacja mobilna została stworzona dla właścicieli pojazdów - Twoich klientów. Jeżeli prowadzisz serwis samochodowy, sprawdź nasz serwis internetowy ",
+    "@headToWebInfo": {
+    "description": "Informacja wyświetlona dla uzytkownika, informująca o róznicy miedzy aplikacja dla kierowcow, a aplikacja dla serwisantów"
+    },
+    "toWebPortal": "Do portalu...",
+    "myCars": "Moje pojazdy",
+    "myServices":"Moje serwisy",
+    "addFirstVehicle": "Dodaj swój pierwszy pojazd!",
+    "brand": "marka",
+    "model": "model", 
+    "year": "rok", 
+    "mileage": "przebieg",
+    "addCarPhoto": "dodaj zdjęcie pojazdu",
+    "addCar": "Dodaj pojazd"
+}

@@ -1,0 +1,39 @@
+{
+    "welcomeInfo": "Вітаємо у Servisso! Будь ласка, розкажи про себе.",
+    "carOwner": "Я власник автомобіля",
+    "carServiceOwner": "Я власник СТО",
+    "loginInfo": "Увійди, щоб отримати доступ до всіх функцій Servisso",
+    "@loginInfo": {
+    "description": "Information displayed to user on the login screen"
+    },
+    "eMail" : "e-mail",
+    "password" : "пароль",
+    "login": "логін",
+    "createAnAccount": "Створити акаунт",
+    "noAccountInfo": "Ще не маєш акаунту? Не біда, натисни на виділений текст, щоб створити акаунт.",
+    "@noAccountInfo": {
+    "description": "Information displayed to user about account creation"
+    },
+    "createAccountInfo": "Будь ласка, введи загальну інформацію про себе, щоб створити акаунт у Servisso.",
+    "@createAccountInfo": {
+    "description": "Information displayed to user on create account screen"
+    },
+    "createAccountDialogInfo": "Ми потребуємо загальну інформацію про тебе, щоб встановити зв'язок із СТО",
+    "name": "ім'я",
+    "surname": "прізвище", 
+    "clear": "очистити",
+    "headToWebInfo": "Цей мобільний застосунок створено для власників авто - Твоїх клієнтів. Якщо ти власник СТО, будь ласка, перейди на веб-портал",
+    "@headToWebInfo": {
+    "description": "Information displayed to user about difference between mobile Servisso app and web portal for garages"
+    },
+    "toWebPortal": "На веб портал",
+    "myCars": "Мої авто",
+    "myServices":"Мої СТО",
+    "addFirstVehicle": "Додати моє перше авто!",
+    "brand": "марка",
+    "model": "модель", 
+    "year": "пік", 
+    "mileage": "пробіг",
+    "addCarPhoto": "додати фото автомобіля",
+    "addCar": "Додати авто"
+}

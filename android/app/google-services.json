@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "416973749351",
+    "project_id": "servisso",
+    "storage_bucket": "servisso.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416973749351:android:1e6e1c9f20b26566c1a8c2",
+        "android_client_info": {
+          "package_name": "com.servisso.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMQyjk4WdnCGohI3JsoBP-2Ri_7SSQw9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
