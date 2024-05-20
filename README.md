@@ -1,4 +1,4 @@
-## Q1 2024 recruitment demo project
+## 2024 recruitment demo project
 
 This is a copy of Servisso project's repository, which I'm working on with my backend dev friend. <br>
 <strong>100% of Flutter code & configuration was written by me.</strong> <br>
